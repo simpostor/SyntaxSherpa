@@ -47,7 +47,7 @@ def auth_callback(username: str, password: str):
     
 @cl.on_chat_start
 async def on_chat_start():
-    model = Ollama(model="SyntaxSherpa")
+    model = Ollama(model="llama3")
     prompt = ChatPromptTemplate.from_messages(
         [
             (
