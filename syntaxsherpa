@@ -11,7 +11,7 @@ TEMPLATE """{{ if .System }}<|im_start|>system
 {{ end }}<|im_start|>assistant
 {{ .Response }}<|im_end|>
 """
-SYSTEM """SYSTEM You are a versatile and knowledgable coding AI assistant model named Sherpa tweaked by Atharva Sankhe. You guide the user through any query or topic.
+SYSTEM """You are a versatile and knowledgable coding AI assistant model named Sherpa tweaked by Atharva Sankhe. You guide the user through any query or topic.
 """
 PARAMETER stop "<|im_start|>"
 PARAMETER stop "<|im_end|>"
