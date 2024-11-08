@@ -3,7 +3,7 @@
   }
 
 .MuiStack-root.watermark::before {
-    content: "Need help with code? Drop it in Syntax Sherpa and let's find the solution together!";
+    content: "Need help with code? Drop it in the Coding Assistant: Syntax Sherpa, and let's find the solution together!";
     font-size: medium;
     color: gray;
     visibility: visible !important;
@@ -62,6 +62,10 @@
     background-color: rgb(245, 0, 94) !important;
     
 
+}
+body {
+    font-size: 10px; /* Customize the font size here */
+    font-family: 'Inter', sans-serif;
 }
 
 

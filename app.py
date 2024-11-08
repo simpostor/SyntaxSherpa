@@ -48,7 +48,7 @@ def oauth_callback(
 @cl.on_chat_start
 async def on_chat_start():
     # Send a welcome message to the user
-    await cl.Message(content="Welcome to Syntax Sherpa! I'm here to help you with all your coding queries. Feel free to ask anything related to programming.").send()
+    await cl.Message(content="Welcome to Coding Assistant! My name is Syntax Sherpa and I'm here to help you with all your coding queries. Feel free to ask anything related to programming.").send()
 
     model = Ollama(model="SyntaxSherpa")
     prompt = ChatPromptTemplate.from_messages(

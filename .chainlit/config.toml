@@ -35,8 +35,8 @@ auto_tag_thread = true
 [features.multi_modal]
     enabled = true
     accept = ["*/*"]
-    max_files = 20
-    max_size_mb = 500
+    max_files = 100
+    max_size_mb = 5000
 
 # Allows user to use speech to text
 [features.speech_to_text]
