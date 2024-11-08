@@ -40,9 +40,9 @@ auto_tag_thread = true
 
 # Allows user to use speech to text
 [features.speech_to_text]
-    enabled = false
+    enabled = true
     # See all languages here https://github.com/JamesBrill/react-speech-recognition/blob/HEAD/docs/API.md#language-string
-    # language = "en-US"
+    language = "en-US"
 
 [UI]
 # Name of the app and chatbot.
@@ -55,20 +55,20 @@ show_readme_as_default = true
 # description = ""
 
 # Large size content are by default collapsed for a cleaner ui
-default_collapse_content = true
+default_collapse_content = false
 
 # The default value for the expand messages settings.
-default_expand_messages = false
+default_expand_messages = true
 
 # Hide the chain of thought details from the user in the UI.
 hide_cot = false
 
 # Link to your github repo. This will add a github button in the UI's header.
-# github = ""
+github = "https://github.com/simpostor/SyntaxSherpa"
 
 # Specify a CSS file that can be used to customize the user interface.
 # The CSS file can be served from the public directory or via an external link.
-# custom_css = "/public/test.css"
+custom_css = "/public/test.css"
 
 # Specify a Javascript file that can be used to customize the user interface.
 # The Javascript file can be served from the public directory.
@@ -84,25 +84,27 @@ hide_cot = false
 
 # Override default MUI light theme. (Check theme.ts)
 [UI.theme]
-    #font_family = "Inter, sans-serif"
+    font_family = "Inter, sans-serif"
 [UI.theme.light]
-    #background = "#FAFAFA"
-    #paper = "#FFFFFF"
+    background = "#FAFAFA"  # Light gray background
+    paper = "#FFFFFF"       # White paper background
 
     [UI.theme.light.primary]
-        #main = "#F80061"
-        #dark = "#980039"
-        #light = "#FFE7EB"
+        main = "#e85e36"     # Primary orange color
+        dark = "#d04e1f"     # Darker shade of the primary color
+        light = "#f2a28b"    # Lighter shade of the primary color
 
 # Override default MUI dark theme. (Check theme.ts)
 [UI.theme.dark]
-    #background = "#FAFAFA"
-    #paper = "#FFFFFF"
+    background = "#212121"  # Dark background (for dark mode)
+    paper = "#424242"       # Darker paper background
 
     [UI.theme.dark.primary]
-        #main = "#F80061"
-        #dark = "#980039"
-        #light = "#FFE7EB"
+        main = "#e85e36"     # Primary orange color
+        dark = "#d04e1f"     # Darker shade of the primary color
+        light = "#f2a28b"    # Lighter shade of the primary color
+
+
 
 
 [meta]

@@ -22,19 +22,48 @@ def auth_callback(username: str, password: str):
             if row['username'] == username and row['password'] == password:
                 return cl.User(identifier=username, metadata={"role": row['role'], "provider": "database"})
     return None
-    
+@cl.oauth_callback
+def oauth_callback(
+    provider_id: str,
+    token: str,
+    raw_user_data: Dict[str, str],
+    default_user: cl.User,
+) -> Optional[cl.User]:
+    if provider_id == "google":
+        user_email = raw_user_data.get("email", "")
+        email_domain = user_email.split("@")[-1]
+
+        if email_domain == "dypatil.edu":
+            return default_user
+    if provider_id == "github":
+        user_email = raw_user_data.get("email", "")
+        email_domain = user_email.split("@")[-1]
+
+        if email_domain == "dypatil.edu":
+            return default_user
+    return None
+
+
+
 @cl.on_chat_start
 async def on_chat_start():
+    # Send a welcome message to the user
+    await cl.Message(content="Welcome to Syntax Sherpa! I'm here to help you with all your coding queries. Feel free to ask anything related to programming.").send()
+
     model = Ollama(model="SyntaxSherpa")
     prompt = ChatPromptTemplate.from_messages(
         [
-            ("system", "You're a very knowledgeable coding AI Model which provides accurate and verbose answers to all questions."),
+            ("system", "You are Syntax Sherpa, a coding AI that provides accurate, helpful responses to coding queries."),
             MessagesPlaceholder(variable_name="history"),
             ("human", "{question}"),
         ]
     )
+    
     runnable = lambda chat_history: prompt | model | StrOutputParser()
     cl.user_session.set("runnable", runnable)
+
+    
+    
 
 
 @cl.on_message

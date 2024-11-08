@@ -3,8 +3,8 @@
   }
 
 .MuiStack-root.watermark::before {
-    content: "How about a little magic from DocGenie? Drop a PDF and type your questions, and let's conjure up some answers!";
-    font-size: large;
+    content: "Need help with code? Drop it in Syntax Sherpa and let's find the solution together!";
+    font-size: medium;
     color: gray;
     visibility: visible !important;
     /* Other CSS styles for the pseudo-element */
