@@ -1,0 +1,24 @@
+Basic Concepts
+Chat Life Cycle
+Whenever a user connects to your Chainlit app, a new chat session is created. A chat
+session goes through a life cycle of events, which you can respond to by defining hooks.
+On Chat Start
+The on_chat_start decorator is used to define a hook that is called when a new chat
+session is created.
+On Message
+The on_message decorator is used to define a hook that is called when a new message
+is received from the user.
+On Stop
+The  decorator is used to define a hook that is called when the user clicks the
+stop button while a task was running.
+@cl.on_chat_start
+defon_chat_start():
+print("A new chat session has started!")
+@cl.on_message
+defon_message(msg: cl.Message):
+print("The user sent: ", msg.content)
+Basic ConceptsChat Life Cycle
+Was this page helpful? Yes No
+Suggest edits Raise issue
+Discord StartersOn Chat End
+The on_chat_end decorator is used to define a hook that is called when the chat session
